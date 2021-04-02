@@ -19,7 +19,7 @@ return: [5, 6, 3]
 [1, 5, 2, 6, 3, 7, 4]를 1번째부터 7번째까지 자릅니다. [1, 2, 3, 4, 5, 6, 7]의 세 번째 숫자는 3입니다.
 """
 
-# 내가 짠 코드
+# 직접  코드
 def solution(array, commands):
     answer = []
     for command in commands: # commands 길이가 1~50이라는 점에서 원소 자체로 접근
