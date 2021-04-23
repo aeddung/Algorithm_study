@@ -3,7 +3,7 @@
 https://programmers.co.kr/learn/courses/30/lessons/60058
 """
 
-# 균형잡힌 괄호 문자열 index 반환
+# 균형잡힌 괄호 문자열 index 반환하는 함수
 def balanced_index(p):
     count = 0
     for i in range(len(p)):
@@ -14,7 +14,7 @@ def balanced_index(p):
         if count == 0: # 균형 잡혔다고 판단되는 해당 위치의 index
             return i
 
-# 올바른 괄호 문자열인지 판단
+# 올바른 괄호 문자열인지 판단하는 함수
 def check_proper(p):
     count = 0
     for i in p:
