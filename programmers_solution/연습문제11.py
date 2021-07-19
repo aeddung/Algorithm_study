@@ -12,11 +12,11 @@
 
 입출력 예
 s                                           result
-"aabbaccc"                                7
-"ababcdcdababcdcd"                   9
-"abcabcdede"                             8
-"abcabcabcabcdededededede"      14
-"xababcdcdababcdcd"                 17
+"aabbaccc"                                    7
+"ababcdcdababcdcd"                            9
+"abcabcdede"                                  8
+"abcabcabcabcdededededede"                   14
+"xababcdcdababcdcd"                          17
 
 입출력 예에 대한 설명
 입출력 예 #1
