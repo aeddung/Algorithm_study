@@ -1,2 +1,3 @@
-# python_coding
-The solutions for python coding
+# Improving programming!
+The practice for algorithm & data structure ability.
+It is all coded in Python.
