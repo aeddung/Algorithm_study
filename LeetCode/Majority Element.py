@@ -17,4 +17,4 @@ from collections import Counter
 class Solution:
     def majorityElement(self, nums: List[int]) -> int:
         count_obj = Counter(nums)
-        return max(count_obj.keys(), key=count_obj.get)
+        return max(count_obj.keys(), key=count_obj.get) # max(iterable object, key=기준이 되는 대상) <- count_obj.get(키 목록)
