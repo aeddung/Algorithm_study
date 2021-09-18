@@ -3,6 +3,9 @@
 https://programmers.co.kr/learn/courses/30/lessons/86052
 """
 
+import sys
+sys.setrecursionlimit(10 ** 6) # 재귀허용 깊이 추가
+
 def out(x, y, d, grid, dic):
     # 방향에 따라 x, y 좌표를 업데이트
     nx = x + dic[d][0]
