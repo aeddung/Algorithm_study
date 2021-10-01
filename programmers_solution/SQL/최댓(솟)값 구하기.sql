@@ -1,3 +1,5 @@
+-- 문제 설명(https://moondol-ai.tistory.com/283)
+
 SELECT DATETIME AS 시간
 FROM ANIMAL_INS
 ORDER BY DATETIME DESC
