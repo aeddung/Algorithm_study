@@ -13,7 +13,7 @@ class Solution:
 
         return True
       
-#       
+# 참고 코드
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
         if len(s) != len(t):
