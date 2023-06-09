@@ -18,7 +18,7 @@ n	wires	result
 7	[[1,2],[2,7],[3,7],[3,4],[4,5],[6,7]]	1
 """
 
-# 참고한 코드
+# 참고한 코드(BFS)
 from collections import deque
 def solution(n, wires):
     graph = [[] for _ in range(n + 1)]
@@ -55,3 +55,37 @@ def solution(n, wires):
         graph[b].append(a)
     
     return res
+
+# UF(union find) 알고리즘 
+def find(x, parent):
+    if parent[x] < 0:
+        return x # 부모 테이블상에서 부모를 자기 자신으로 초기화하
+    parent[x] = find(parent[x], parent)
+    return parent[x]
+
+def union(a, b, parent):
+    root_a = find(a, parent)
+    root_b = find(b, parent)
+    
+    if root_a < root_b:
+        parent[root_a] += parent[root_b] # 루트노드의 parent값 절댓값은 트리 크기 의미
+        parent[root_b] = root_a  
+    else: # root_a > root_b
+        parent[root_b] += parent[root_a]
+        parent[root_a] = root_b
+
+def solution(n, wires):
+    answer = n
+    for exclude in range(n - 1):
+        parent = [-1] * (n + 1)
+        
+        # 간선을 차례대로 제외하면서 나머지 간선들로 유니온 파인드 진행
+        for a, b in (wires[:exclude] + wires[exclude + 1:]):
+            union(a, b, parent)
+            
+        # 제외한 간선의 양 끝 점은 서로 독립된 트리의 어느 한 점으로,
+        # 그 두 점의 루트 노드의 parent 값의 차의 절댓값이 두 트리 사이의 노드 개수 차이
+        sub_cnt1 = parent[find(wires[exclude][0], parent)]
+        sub_cnt2 = parent[find(wires[exclude][1], parent)]
+        answer = min(answer, abs(sub_cnt2 - sub_cnt1))
+    return answer
